@@ -110,6 +110,17 @@ class FakePerson {
         const letter = availableLetters[Math.floor(Math.random() * (availableLetters.length))]
         return letter
     }
+
+    rollDice = (sides, numOfDices) => {
+        const rolls = []
+
+        for (let i = 0; i < numOfDices; i++) {
+             const roll = Math.floor((Math.random() * sides) + 1)
+             rolls.push(roll)
+        }
+
+        return rolls
+    }
 }
 
 
@@ -125,3 +136,4 @@ console.log("email: ", computer.getEmail())
 console.log("country: ", computer.getCountry())
 console.log("password: ", computer.getPassword())
 console.log("guessed letter: ", computer.guessLetter(letters))
+console.log("roll dice: ", computer.rollDice(6, 2))
