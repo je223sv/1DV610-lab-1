@@ -1,4 +1,5 @@
-import { menFirstNames, womenFirstNames, lastNames } from "./nameList.js"
+import { menFirstNames, womenFirstNames, lastNames } from './nameList.js'
+import { countries } from './countryList.js'
 
 
 class FakePerson {
@@ -14,7 +15,7 @@ class FakePerson {
         this.#fullName = this.#generateFullName()
         this.#age = this.#generateAge()
         this.#email = this.#generateEmail()
-        this.#country = 'Sweden'
+        this.#country = this.#generateCountry()
         this.#password = 'mysupersecretpassword123'
     }
 
@@ -52,6 +53,10 @@ class FakePerson {
     #generateEmail = () => {
         const email = this.getFirstName() + '.' + this.getLastName() + '@example.com'
         return email.toLowerCase()
+    }
+
+    #generateCountry = () => {
+        return countries[Math.floor(Math.random() * (countries.length))]
     }
 
     getGender () {
