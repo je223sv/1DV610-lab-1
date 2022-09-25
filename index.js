@@ -1,3 +1,5 @@
+import { menFirstNames, womenFirstNames, lastNames } from "./nameList.js"
+
 
 class FakePerson {
     #fullName
@@ -9,7 +11,7 @@ class FakePerson {
 
     constructor () {
         this.#gender = this.#generateGender()
-        this.#fullName = 'john doe'
+        this.#fullName = this.#generateFullName()
         this.#age = 44
         this.#email = 'john.doe@example.com'
         this.#country = 'Sweden'
@@ -20,6 +22,26 @@ class FakePerson {
         const genders = ['male', 'female'] 
         const randomGender = genders[Math.floor(Math.random() * 2)]
         return randomGender
+    }
+
+    #generateFullName = () => {
+        const firstName = this.#generateFirstName()
+        const lastName = this.#generateLastName()
+        return firstName + ' ' + lastName
+    }
+
+    #generateFirstName = () => {
+        // catch if no name
+
+        if (this.#gender === 'male') {
+            return menFirstNames[Math.floor(Math.random() * (menFirstNames.length))]
+        } else if (this.#gender === 'female') {
+            return womenFirstNames[Math.floor(Math.random() * (womenFirstNames.length))]
+        }
+    }
+
+    #generateLastName = () => {
+        return lastNames[Math.floor(Math.random() * lastNames.length)]
     }
 
     getGender () {
@@ -46,6 +68,11 @@ class FakePerson {
         return this.#password
     }
 }
+
+
+
+
+
 
 const computer = new FakePerson()
 console.log("gender: ", computer.getGender())
