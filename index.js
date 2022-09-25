@@ -105,6 +105,11 @@ class FakePerson {
     getPassword () {
         return this.#password
     }
+
+    guessLetter = (availableLetters) => {
+        const letter = availableLetters[Math.floor(Math.random() * (availableLetters.length))]
+        return letter
+    }
 }
 
 
@@ -119,3 +124,4 @@ console.log("age: ", computer.getAge())
 console.log("email: ", computer.getEmail())
 console.log("country: ", computer.getCountry())
 console.log("password: ", computer.getPassword())
+console.log("guessed letter: ", computer.guessLetter(letters))
