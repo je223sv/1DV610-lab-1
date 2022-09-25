@@ -12,7 +12,7 @@ class FakePerson {
     constructor () {
         this.#gender = this.#generateGender()
         this.#fullName = this.#generateFullName()
-        this.#age = 44
+        this.#age = this.#generateAge()
         this.#email = 'john.doe@example.com'
         this.#country = 'Sweden'
         this.#password = 'mysupersecretpassword123'
@@ -31,7 +31,7 @@ class FakePerson {
     }
 
     #generateFirstName = () => {
-        // catch if no name
+        // catch if no gender
 
         if (this.#gender === 'male') {
             return menFirstNames[Math.floor(Math.random() * (menFirstNames.length))]
@@ -42,6 +42,10 @@ class FakePerson {
 
     #generateLastName = () => {
         return lastNames[Math.floor(Math.random() * lastNames.length)]
+    }
+
+    #generateAge = () => {
+        return Math.floor(Math.random() * 90 + 18)
     }
 
     getGender () {
