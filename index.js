@@ -1,5 +1,6 @@
 import { menFirstNames, womenFirstNames, lastNames } from './nameList.js'
 import { countries } from './countryList.js'
+import { letters, specialCharacters } from './characterList.js'
 
 
 class FakePerson {
@@ -16,7 +17,7 @@ class FakePerson {
         this.#age = this.#generateAge()
         this.#email = this.#generateEmail()
         this.#country = this.#generateCountry()
-        this.#password = 'mysupersecretpassword123'
+        this.#password = this.#generatePassword()
     }
 
      #generateGender = () => {
@@ -57,6 +58,20 @@ class FakePerson {
 
     #generateCountry = () => {
         return countries[Math.floor(Math.random() * (countries.length))]
+    }
+
+    #generatePassword = () => {
+        let password = ''
+
+        // Adding 4 different types of characters 3 times resulting in a unique 12 word password.
+        for (let i = 0; i < 3; i++) {
+            password += specialCharacters[Math.floor(Math.random() * (specialCharacters.length))]
+            password += Math.floor(Math.random() * 10 + 1)
+            password += letters[Math.floor(Math.random() * (letters.length))].toUpperCase()
+            password += letters[Math.floor(Math.random() * (letters.length))]
+        }
+
+        return password
     }
 
     getGender () {
