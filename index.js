@@ -121,6 +121,11 @@ class FakePerson {
 
         return rolls
     }
+
+    playRockPaperScissor = () => {
+        const options = ['rock', 'paper', 'scissor']
+        return options[Math.floor(Math.random() * (options.length))]
+    }
 }
 
 
@@ -137,3 +142,4 @@ console.log("country: ", computer.getCountry())
 console.log("password: ", computer.getPassword())
 console.log("guessed letter: ", computer.guessLetter(letters))
 console.log("roll dice: ", computer.rollDice(6, 2))
+console.log("Rock paper scissor: ", computer.playRockPaperScissor())
