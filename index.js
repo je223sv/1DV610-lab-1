@@ -8,12 +8,18 @@ class FakePerson {
     #password 
 
     constructor () {
-        this.#gender = 'male'
+        this.#gender = this.#generateGender()
         this.#fullName = 'john doe'
         this.#age = 44
         this.#email = 'john.doe@example.com'
         this.#country = 'Sweden'
         this.#password = 'mysupersecretpassword123'
+    }
+
+     #generateGender = () => {
+        const genders = ['male', 'female'] 
+        const randomGender = genders[Math.floor(Math.random() * 2)]
+        return randomGender
     }
 
     getGender () {
