@@ -13,7 +13,7 @@ class FakePerson {
         this.#gender = this.#generateGender()
         this.#fullName = this.#generateFullName()
         this.#age = this.#generateAge()
-        this.#email = 'john.doe@example.com'
+        this.#email = this.#generateEmail()
         this.#country = 'Sweden'
         this.#password = 'mysupersecretpassword123'
     }
@@ -48,12 +48,26 @@ class FakePerson {
         return Math.floor(Math.random() * 90 + 18)
     }
 
+
+    #generateEmail = () => {
+        const email = this.getFirstName() + '.' + this.getLastName() + '@example.com'
+        return email.toLowerCase()
+    }
+
     getGender () {
         return this.#gender
     }
 
     getFullName () {
         return this.#fullName
+    }
+
+    getFirstName = () => {
+        return this.#fullName.split(' ')[0]
+    }
+
+    getLastName = () => {
+        return this.#fullName.split(' ')[1]
     }
 
     getAge () {
