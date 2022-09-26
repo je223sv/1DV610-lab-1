@@ -110,9 +110,9 @@ class FakePerson {
         return `Hello, my name is ${this.#fullName} and I am ${this.#age} years old. I live in ${this.#country} and you can contact me at ${this.#email}.`
     }
 
-    guessLetter = (availableLetters) => {
-        const letter = availableLetters[Math.floor(Math.random() * (availableLetters.length))]
-        return letter
+    guess = (options) => {
+        const selection = options[Math.floor(Math.random() * (options.length))]
+        return selection
     }
 
     rollDice = (sides, numOfDices) => {
