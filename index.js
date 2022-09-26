@@ -132,10 +132,10 @@ class FakePerson {
     }
 
     #answeredCorrectly = (skillLevel) => {
-        const randNum = Math.floor((Math.random() * 10) + 1)
-
         // Map skill level to an integer.
         const skillLevels = { expert: 8, average: 7, beginner: 6 }
+
+        const randNum = Math.floor((Math.random() * 10) + 1)
         return randNum <= skillLevel
     }
 
