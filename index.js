@@ -20,6 +20,17 @@ class FakePerson {
         this.#password = this.#generatePassword()
     }
 
+    static createMany = (num) => {
+        const people = []
+
+        for (let i = 0; i < num; i++) {
+            const person = new FakePerson()
+            people.push(person)
+        }
+
+        return people
+    }
+
      #generateGender = () => {
         const genders = ['male', 'female'] 
         const randomGender = genders[Math.floor(Math.random() * 2)]
@@ -174,3 +185,7 @@ const question = {
     correctAnswer: 'stockholm'
 }
 console.log("quiz answer: ", computer.answerQuizQuestion(question, 'beginner'))
+
+const people = FakePerson.createMany(10)
+console.log(people)
+console.log(people[0])
