@@ -165,7 +165,7 @@ console.log("email: ", computer.getEmail())
 console.log("country: ", computer.getCountry())
 console.log("password: ", computer.getPassword())
 console.log("description: ", computer.getDescription())
-console.log("guessed letter: ", computer.guessLetter(letters))
+console.log("guessed letter: ", computer.guess(letters))
 console.log("roll dice: ", computer.rollDice(6, 2))
 console.log("Rock paper scissor: ", computer.playRockPaperScissor())
 const question = {
