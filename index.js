@@ -126,6 +126,26 @@ class FakePerson {
         const options = ['rock', 'paper', 'scissor']
         return options[Math.floor(Math.random() * (options.length))]
     }
+
+    #answeredCorrectly = (skillLevel) => {
+        const randNum = Math.floor((Math.random() * 10) + 1)
+
+        // Map skill level to an integer.
+        const skillLevels = { expert: 8, average: 7, beginner: 6 }
+        return randNum <= skillLevel
+    }
+
+    answerQuizQuestion = (question, skillLevel = 'average') => {
+        const { options, correctAnswer } = question
+
+        if (this.#answeredCorrectly(skillLevel)) {
+            return correctAnswer
+        } else {
+            const indexOfCorrectAnswer = options.indexOf(correctAnswer)
+            options.splice(indexOfCorrectAnswer, 1) // Remove correct answer from the options.
+            return options[Math.floor(Math.random() * (options.length))] // Return any of the remaining wrong answers.
+        }
+    }
 }
 
 
@@ -143,3 +163,9 @@ console.log("password: ", computer.getPassword())
 console.log("guessed letter: ", computer.guessLetter(letters))
 console.log("roll dice: ", computer.rollDice(6, 2))
 console.log("Rock paper scissor: ", computer.playRockPaperScissor())
+const question = {
+    text: 'What is the capital of Sweden?',
+    options: ['oslo', 'helsinki', 'stockholm', 'copenhagen'],
+    correctAnswer: 'stockholm'
+}
+console.log("quiz answer: ", computer.answerQuizQuestion(question, 'beginner'))
