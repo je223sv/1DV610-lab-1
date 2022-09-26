@@ -106,6 +106,10 @@ class FakePerson {
         return this.#password
     }
 
+    getDescription = () => {
+        return `Hello, my name is ${this.#fullName} and I am ${this.#age} years old. I live in ${this.#country} and you can contact me at ${this.#email}.`
+    }
+
     guessLetter = (availableLetters) => {
         const letter = availableLetters[Math.floor(Math.random() * (availableLetters.length))]
         return letter
@@ -160,6 +164,7 @@ console.log("age: ", computer.getAge())
 console.log("email: ", computer.getEmail())
 console.log("country: ", computer.getCountry())
 console.log("password: ", computer.getPassword())
+console.log("description: ", computer.getDescription())
 console.log("guessed letter: ", computer.guessLetter(letters))
 console.log("roll dice: ", computer.rollDice(6, 2))
 console.log("Rock paper scissor: ", computer.playRockPaperScissor())
