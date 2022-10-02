@@ -43,7 +43,7 @@ export const validateNumber = (input, message) => {
  */
  export const validateArray = (input) => {
     if (!Array.isArray(input)) {
-        throw new Error('The provided data type must be an array.')
+        throw new Error('You must provide an array.')
     }
 }
 

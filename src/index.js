@@ -29,8 +29,10 @@ class FakePerson {
     /**
      * Creates a fake person.
      */
-    constructor() {
-        this.#gender = this.#generateGender()
+    constructor(gender) {
+        // validateGender(gender)
+
+        this.#gender = gender || this.#generateGender()
         this.#fullName = this.#generateFullName()
         this.#age = this.#generateAge()
         this.#email = this.#generateEmail()
@@ -382,12 +384,15 @@ class FakePerson {
      * @returns {string} - A wrong answer.
      */
     #getWrongAnswer = (options, correctAnswer) => {
+        const optionsCopy = [...options]
         const indexOfCorrectAnswer = options.indexOf(correctAnswer)
 
         // Remove correct answer from the options.
-        options.splice(indexOfCorrectAnswer, 1)
+        optionsCopy.splice(indexOfCorrectAnswer, 1)
 
         // Return any of the remaining wrong answers.
-        return options[Math.floor(Math.random() * (options.length))]   
+        return optionsCopy[Math.floor(Math.random() * (optionsCopy.length))]   
     }
 }
+
+export default FakePerson
