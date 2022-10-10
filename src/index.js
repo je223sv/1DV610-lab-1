@@ -1,36 +1,41 @@
+import { generateRandomNumExclusive } from './utils/generateRandomNumExclusive.js'
+import { generateRandomNumInclusive } from './utils/generateRandomNumInclusive.js'
+import { generateSpecialCharacters } from './utils/generateSpecialCharacters.js'
+import { generateLetters } from './utils/generateLetters.js'
+import SimpleAi from './simpleAi/index.js'
+import { MAX_AGE, MIN_AGE, VALID_GENDERS } from './data/constants.js'
+import { countries } from './data/countryList.js'
 import {
     menFirstNames,
     womenFirstNames,
     lastNames
 } from './data/nameList.js'
-import { countries } from './data/countryList.js'
 import {
     validatePositiveNumber,
-    validateOptions,
-    validateFaces,
-    validateNumOfDice,
-    validateCorrectAnswer,
-    validateSkillLevel
+    validateGender
 } from './validations/index.js'
-import { generateRandomNumExclusive } from './utils/generateRandomNumExclusive.js'
-import { generateRandomNumInclusive } from './utils/generateRandomNumInclusive.js'
-import { generateSpecialCharacters } from './utils/generateSpecialCharacters.js'
-import { generateLetters } from './utils/generateLetters.js'
 
 /** Class representing a fake person. */
-class FakePerson {
+export default class FakePerson {
+    #MAX_AGE = MAX_AGE
+    #MIN_AGE = MIN_AGE
     #fullName
     #age
     #email
     #country
     #gender
     #password
+    #ai
 
     /**
      * Creates a fake person.
+     * 
+     * @param {String='male', 'female'} gender - The gender of the fake person.
      */
     constructor(gender) {
-        // validateGender(gender)
+        if (gender) {
+            validateGender(gender)
+        }
 
         this.#gender = gender || this.#generateGender()
         this.#fullName = this.#generateFullName()
@@ -38,6 +43,7 @@ class FakePerson {
         this.#email = this.#generateEmail()
         this.#country = this.#generateCountry()
         this.#password = this.#generatePassword()
+        this.#ai = new SimpleAi()
     }
 
     /**
@@ -47,19 +53,15 @@ class FakePerson {
      * @returns {Array} - Array of fake persons.
      */
     static createMany = (num) => {
-        try {
-            validatePositiveNumber(num)
+        validatePositiveNumber(num)
 
-            const people = []
+        const people = []
 
-            for (let i = 0; i < num; i++) {
-                people.push(new FakePerson())
-            }
-
-            return people
-        } catch (error) {
-            console.error(error.message)
+        for (let i = 0; i < num; i++) {
+            people.push(new FakePerson())
         }
+
+        return people
     }
 
     /**
@@ -68,9 +70,8 @@ class FakePerson {
      * @returns {string} - The gender as in male or female.
      */
     #generateGender = () => {
-        const genders = ['male', 'female']
-        const randomIndex = generateRandomNumExclusive(genders.length)
-        const randomGender = genders[randomIndex]
+        const randomIndex = generateRandomNumExclusive(VALID_GENDERS.length)
+        const randomGender = VALID_GENDERS[randomIndex]
         return randomGender
     }
 
@@ -91,10 +92,6 @@ class FakePerson {
      * @returns {string} - A male or a female first name.
      */
     #generateFirstName = () => {
-        if (!this.#hasGender()) {
-            this.#generateGender()
-        }
-
         if (this.isMale()) {
             const randomIndex = generateRandomNumExclusive(menFirstNames.length)
             return menFirstNames[randomIndex]
@@ -102,24 +99,6 @@ class FakePerson {
             const randomIndex = generateRandomNumExclusive(womenFirstNames.length)
             return womenFirstNames[randomIndex]
         }
-    }
-
-    /**
-     * Check whether the fake person has a gender. 
-     *
-     * @returns {boolean} - true or false.
-     */
-    #hasGender = () => {
-        return this.#gender ? true : false
-    }
-
-    /**
-     * Check whether the fake person has a full name. 
-     *
-     * @returns {boolean} - true or false.
-     */
-    #hasFullName = () => {
-        return this.#fullName ? true : false
     }
 
     /**
@@ -141,24 +120,24 @@ class FakePerson {
     }
 
     /**
-     * Generate a random last name based on the gender of the fake person.
+     * Generate a random last name.
      *
      * @returns {string} - A last name.
      */
     #generateLastName = () => {
         const randomIndex = generateRandomNumExclusive(lastNames.length)
-        return lastNames[randomIndex]
+        const lastName = lastNames[randomIndex]
+        return lastName
     }
 
     /**
      * Generate a random age.
      *
-     * @returns {number} - An age.
+     * @returns {number} - A number between MAX_AGE and MIN_AGE.
      */
     #generateAge = () => {
-        const maxAge = 99
-        const minAge = 18
-        return generateRandomNumInclusive(maxAge, minAge)
+        const age = generateRandomNumInclusive(this.#MAX_AGE, this.#MIN_AGE)
+        return age
     }
 
     /**
@@ -167,10 +146,6 @@ class FakePerson {
      * @returns {string} - An email.
      */
     #generateEmail = () => {
-        if (!this.#hasFullName()) {
-            this.#generateFullName()
-        }
-
         const email = this.getFirstName() + '.' + this.getLastName() + '@example.com'
         return email.toLowerCase()
     }
@@ -182,7 +157,8 @@ class FakePerson {
      */
     #generateCountry = () => {
         const randomIndex = generateRandomNumExclusive(countries.length)
-        return countries[randomIndex]
+        const country = countries[randomIndex]
+        return country
     }
 
     /**
@@ -210,7 +186,7 @@ class FakePerson {
      *
      * @returns {string} - A gender. 
      */
-    getGender() {
+    getGender = () => {
         return this.#gender
     }
 
@@ -219,7 +195,7 @@ class FakePerson {
      *
      * @returns {string} - A full name.
      */
-    getFullName() {
+    getFullName = () => {
         return this.#fullName
     }
 
@@ -246,7 +222,7 @@ class FakePerson {
      *
      * @returns {number} - An age.
      */
-    getAge() {
+    getAge = () => {
         return this.#age
     }
 
@@ -255,7 +231,7 @@ class FakePerson {
      *
      * @returns {string} - An email.
      */
-    getEmail() {
+    getEmail = () => {
         return this.#email
     }
 
@@ -264,7 +240,7 @@ class FakePerson {
      *
      * @returns {string} - A country.
      */
-    getCountry() {
+    getCountry = () => {
         return this.#country
     }
 
@@ -273,7 +249,7 @@ class FakePerson {
      *
      * @returns {string} - A password.
      */
-    getPassword() {
+    getPassword = () => {
         return this.#password
     }
 
@@ -283,7 +259,7 @@ class FakePerson {
      * @returns {string} - A description.
      */
     getDescription = () => {
-        return `Hello, my name is ${this.#fullName || 'anon'} and I am ${this.#age || '0'} years old. I live in ${this.#country || 'space'} and you can contact me at ${this.#email || 'anon@example.com'}.`
+        return `Hello, my name is ${this.#fullName} and I am ${this.#age} years old. I live in ${this.#country} and you can contact me at ${this.#email}.`
     }
 
     /**
@@ -293,15 +269,7 @@ class FakePerson {
      * @returns {*} - The randomly selected value.
      */
     makeSelection = (options) => {
-        try {
-            validateOptions(options)
-
-            const randomIndex = generateRandomNumExclusive(options.length)
-            const selection = options[randomIndex]
-            return selection
-        } catch (error) {
-            console.error(error.message)
-        }
+        return this.#ai.makeSelection(options)
     }
 
     /**
@@ -311,88 +279,39 @@ class FakePerson {
      * @param {number} numOfDices - The number of dice that should be rolled.
      * @returns {Array} - Array containing the result from the dice roll(s).
      */
-    rollDice = (faces, numOfDice) => {
-        try {
-            validateFaces(faces)
-            validateNumOfDice(numOfDice)
-
-            const rolls = []
-
-            for (let i = 0; i < numOfDice; i++) {
-                const roll = generateRandomNumInclusive(faces, 1)
-                rolls.push(roll)
-            }
-
-            return rolls
-        } catch (error) {
-            console.error(error.message)
-        }
+     rollDice = (faces, numOfDice) => {
+        return this.#ai.rollDice(faces, numOfDice)
     }
 
     /**
-     * Play the rock paper scissor game.
+     * Play the Rock, Paper, Scissors game.
      *
-     * @returns {string} - Rock, paper or scissor.
+     * @returns {string} - Rock, paper or scissors.
      */
-    playRockPaperScissor = () => {
-        const options = ['rock', 'paper', 'scissor']
-        const randomIndex = generateRandomNumExclusive(options.length)
-        return options[randomIndex]
+     playRockPaperScissors = () => {
+        return this.#ai.playRockPaperScissors()
     }
 
     /**
      * Attempt to answer a quiz question correctly based on the skill level.
      *
      * @param {object} question - An object containing the options as an array and the correct answer as a string.
-     * @param {string} skillLevel - Determines how likely the fake person is to answer correctly.
+     * @param {String='beginner', 'average', 'expert'} skillLevel - Determines how likely the fake person is to answer correctly.
      * @returns {string} - The answer given by the fake person.
      */
-    answerQuizQuestion = ({options, correctAnswer}, skillLevel = 'average') => {
-        try {
-            validateOptions(options)
-            validateCorrectAnswer(correctAnswer, options)
-            validateSkillLevel(skillLevel)
-
-            if (this.#answeredCorrectly(skillLevel)) {
-                return correctAnswer
-            } else {
-                return this.#getWrongAnswer(options, correctAnswer)
-            }
-        } catch (error) {
-            console.error(error.message)
-        }
+     answerQuizQuestion = ({options, correctAnswer}, skillLevel) => {
+        return this.#ai.answerQuizQuestion({options, correctAnswer}, skillLevel)
     }
 
     /**
-     * Determines whether the fake person will answer correctly based on its skill level. For example,
-     * a beginner is 6/10 likely to answer correctly while an expert is 8/10 likely to answer correctly.
-     * 
-     * @param {string} skillLevel - Determines how likely the fake person is to answer correctly.
-     * @returns {boolean} - Whether the fake person answered correctly or not.
-     */
-    #answeredCorrectly = (skillLevel) => {
-        const skillLevels = { expert: 8, average: 7, beginner: 6 }
-        const randomNumber = generateRandomNumInclusive(10, 1)
-        return randomNumber <= skillLevels[skillLevel]
-    }
-
-    /**
-     * Get the wrong answer.
+     * Whether the fake person should be "hit" with a new card in a game of
+     * Black Jack.
      *
-     * @param {Array} options - The options to choose from.
-     * @param {string} correctAnswer - The correct answer.
-     * @returns {string} - A wrong answer.
+     * @param {number} currentScore
+     * @param {{String='risky','safe'}} mode - Determines how likely the the fake person is to continue.
+     * @returns {boolean}
      */
-    #getWrongAnswer = (options, correctAnswer) => {
-        const optionsCopy = [...options]
-        const indexOfCorrectAnswer = options.indexOf(correctAnswer)
-
-        // Remove correct answer from the options.
-        optionsCopy.splice(indexOfCorrectAnswer, 1)
-
-        // Return any of the remaining wrong answers.
-        return optionsCopy[Math.floor(Math.random() * (optionsCopy.length))]   
+     shouldHitMe = (currentScore, mode) => {
+        return this.#ai.shouldHitMe(currentScore, mode)
     }
 }
-
-export default FakePerson

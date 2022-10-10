@@ -1,3 +1,5 @@
+import { validatePositiveNumber, validateWholeNumber } from "../validations/index.js"
+
 /**
  * Generate a random number between max and min where max is exclusive.
  *
@@ -6,6 +8,12 @@
  * @returns {number} - A random number between max and min.
  */
 export const generateRandomNumExclusive = (max, min = 0) => {
-    // Error handling.. 
+    validatePositiveNumber(max)
+    validateWholeNumber(min)
+
+    if (max <= min) {
+        throw new Error('max must be bigger than min.')
+    }
+
     return Math.floor(Math.random() * (max - min) + min)
 }

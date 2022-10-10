@@ -1,12 +1,16 @@
 import { specialCharacters } from '../data/characterList.js'
 import { generateRandomNumExclusive } from '../utils/generateRandomNumExclusive.js'
+import { validatePositiveNumber } from '../validations/index.js'
 
 /**
- * Generate a random special character.
+ * Generate random special character(s).
+ *
  * @param {number} num - The number of special characters to create.
- * @returns {string} - A special character.
+ * @returns {string} - Special character(s).
  */
 export const generateSpecialCharacters = (num) => {
+    validatePositiveNumber(num)
+
     let randomCharacters = ''
 
     for (let i = 0; i < num; i++) {
