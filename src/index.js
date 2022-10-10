@@ -12,7 +12,8 @@ import {
 } from './data/nameList.js'
 import {
     validatePositiveNumber,
-    validateGender
+    validateGender,
+    validateNumber
 } from './validations/index.js'
 
 /** Class representing a fake person. */
@@ -25,6 +26,7 @@ export default class FakePerson {
     #country
     #gender
     #password
+    #score
     #ai
 
     /**
@@ -43,6 +45,7 @@ export default class FakePerson {
         this.#email = this.#generateEmail()
         this.#country = this.#generateCountry()
         this.#password = this.#generatePassword()
+        this.#score = 0
         this.#ai = new SimpleAi()
     }
 
@@ -254,12 +257,32 @@ export default class FakePerson {
     }
 
     /**
+     * Get the score of the fake person.
+     *
+     * @returns {number} - A score.
+     */
+     getScore = () => {
+        return this.#score
+    }
+
+    /**
      * Get a description of the fake person.
      *
      * @returns {string} - A description.
      */
     getDescription = () => {
         return `Hello, my name is ${this.#fullName} and I am ${this.#age} years old. I live in ${this.#country} and you can contact me at ${this.#email}.`
+    }
+
+    /**
+     * Set the score of the fake person.
+     *
+     * @param {number} score
+     */
+     setScore = (score) => {
+        validateNumber(score)
+
+        this.#score = score
     }
 
     /**

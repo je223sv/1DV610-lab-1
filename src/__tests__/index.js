@@ -85,6 +85,32 @@ describe('Fake person', () => {
         })
     })
 
+    describe('Score', () => {
+        const score = fakePerson.getScore()
+
+        describe('Valid input', () => {
+            it('Should get a score', () => {
+                expect(score).not.toBe(undefined)
+            })
+
+            it('Should get a valid score', () => {
+                expect(typeof score === 'number').toBeTruthy()
+            })
+
+            it('Should be able to set a score', () => {
+                fakePerson.setScore(10)
+                expect(fakePerson.getScore()).toBe(10)
+            })
+        })
+
+        describe('Invalid input', () => {
+            it('Should throw an Error if score is not a number', () => {
+                expect(() => fakePerson.setScore()).toThrow('You must provide a number.')
+                expect(() => fakePerson.setScore('10')).toThrow('You must provide a number.')
+            })
+        })
+    })
+
     describe('Email', () => {
         const email = fakePerson.getEmail()
         
@@ -121,23 +147,29 @@ describe('Fake person', () => {
 })
 
 describe('Fake person with specified gender', () => {
-    const fakeMale = new FakePerson('male')
     const fakeFemale = new FakePerson('female')
+    const fakeMale = new FakePerson('male')
 
     describe('Gender', () => {
-        it('Should be a female if specified', () => {
-            const gender = fakeFemale.getGender()
-            expect(gender).toBe('female')
-        })
-    
-        it('Should be a male if specified', () => {
-            const gender = fakeMale.getGender()
-            expect(gender).toBe('male')
+        describe('Valid input', () => {
+            it('Should be a female if specified', () => {
+                const gender = fakeFemale.getGender()
+
+                expect(gender).toBe('female')
+            })
+
+            it('Should be a male if specified', () => {
+                const gender = fakeMale.getGender()
+
+                expect(gender).toBe('male')
+            })
         })
 
-        it('Should throw an Error if an invalid gender is provided', () => {
-            expect(() => new FakePerson('invalid gender')).toThrow('You must provide a valid gender such as male or female.')
-        })
+        describe('Invalid input', () => {
+            it('Should throw an Error if an invalid gender is provided', () => {
+                expect(() => new FakePerson('invalid gender')).toThrow('You must provide a valid gender such as male or female.')
+            })
+        })        
     })
 
     describe('Name', () => {
