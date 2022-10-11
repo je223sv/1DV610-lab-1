@@ -35,13 +35,23 @@ Utöver detta, har jag skrivit en [README](https://github.com/je223sv/1DV610-lab
 
 Det finns två klasser i denna modul; `FakePerson` och `SimpleAi`. Med `FakePerson` skapas en “låtsas” person med slumpmässigt genererade egenskaper såsom namn, ålder och kön som kan användas när man behöver “dum” användardata.
 
-`FakePerson` är dessutom en komposit klass som använder sig av `SimpleAi` för metoder som kan användas för simulera en AI i enklare spel såsom guess the number, the hanging man, rock paper scissors, frågesporter, black jack, osv.
+`FakePerson` är dessutom en komposit klass som använder sig av `SimpleAi` för metoder som kan användas för att simulera en AI i enklare spel såsom guess the number, the hanging man, rock paper scissors, frågesporter, black jack, osv.
 
 -class diagram here-
 
 ​
 ## Hur jag testat
-Beskriv hur du kommit fram till om din kod fungerar.
+<!-- Beskriv hur du kommit fram till om din kod fungerar. -->
+För att testa denna modul, så har jag använt automatiska enhetsheter med testramverket **Jest**. Varje klass och submodul har sin egen testfil som går att hitta i en **__tests__** mapp:
+
+-bild-
+
+Mellan dessa testfiler finns det totalt 79 enhetstester:
+
+-bild-
+
+För att köra samtliga enhetstester, så kan man använda sig av `npm test` kommandot.
+
 ​
 ### Testfall
 Lista de enskilda testfallen. **Fetmarkera** sådant som du själv fyllt i. En rad per testfall. Om ni använder vertyg för testning kan ni ha en bild här med testrapporten. Tänk på att kommunicera till mig. Vad fungerar?, vad fungerar inte? Hur är det testat? Vilka delar testas inte?
