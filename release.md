@@ -47,16 +47,16 @@ Se [README](https://github.com/je223sv/1DV610-lab-1#readme) för mer information
 
 ## Hur jag testat
 <!-- Beskriv hur du kommit fram till om din kod fungerar. -->
-För att testa denna modul, så har jag använt automatiska enhetsheter med testramverket **Jest**. Varje klass och submodul har sin egen testfil som går att hitta i en **__tests__** mapp:
 
--bild-
+För att testa denna modul, så har jag använt testramverket **Jest** och skrivit automatiska enhetstester. Varje "submodul" har sin egna testfil som går att hitta i en **__tests__** map:
+
+![test](src/images/testade-submoduler.png)
 
 Mellan dessa testfiler finns det totalt 79 enhetstester:
 
 ![test](src/images/test.png)
 
-För att köra samtliga enhetstester, så kan man använda sig av `npm test` kommandot.
-
+Använd `npm test` kommandot i terminalen för att köra samtliga enhetstester och `npm lint` för att analysera kodstandarden.
 ​
 ### Testfall
 Lista de enskilda testfallen. **Fetmarkera** sådant som du själv fyllt i. En rad per testfall. Om ni använder vertyg för testning kan ni ha en bild här med testrapporten. Tänk på att kommunicera till mig. Vad fungerar?, vad fungerar inte? Hur är det testat? Vilka delar testas inte?
