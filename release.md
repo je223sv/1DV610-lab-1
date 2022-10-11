@@ -117,4 +117,6 @@ Det enda problemet jag stötte på var hur jag skulle testa delegerande metoder 
 |**#getWrongAnswer(*options*, *correctAnswer*):**<br>Metod för att returnera "fel" element från ``options``. Det vill säga, det element som inte är lika med ``correctAnswer``.|14|**Have no side-effects:**<br>Den första iteration av denna funktion hade en sidoeffekt då den förutom att returnera ett “wrong answer” även modifierade ``options`` arrayen som skickades med. Jag blev medveten om denna sidoeffekt när jag testade vilket visar på hur viktigt testning är. Sidoeffekten eliminerades genom att skapa och använda kopia av den ursprungliga arrayen.|
 ​
 ## Laborationsreflektion
-Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken. 
+<!-- Reflektera över uppgiften utifrån ett kodkvalitetsperspektiv. Använd begrepp ifrån boken.  -->
+
+På förhand kan man lätt tro att namnge saker ska vara enkelt. Det skulle visa sig ligga en hel vetenskap bakom detta. Det finns ett känt citat som lyder "There are only two hard things in computer science: cache invalidation and naming things" och jag förstår poängen.
