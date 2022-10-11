@@ -59,12 +59,31 @@ Mellan dessa testfiler finns det totalt 79 enhetstester:
 Använd `npm test` kommandot i terminalen för att köra samtliga enhetstester och `npm lint` för att analysera kodstandarden.
 ​
 ### Testfall
-Lista de enskilda testfallen. **Fetmarkera** sådant som du själv fyllt i. En rad per testfall. Om ni använder vertyg för testning kan ni ha en bild här med testrapporten. Tänk på att kommunicera till mig. Vad fungerar?, vad fungerar inte? Hur är det testat? Vilka delar testas inte?
+<!-- Lista de enskilda testfallen. **Fetmarkera** sådant som du själv fyllt i. En rad per testfall. Om ni använder vertyg för testning kan ni ha en bild här med testrapporten. Tänk på att kommunicera till mig. Vad fungerar?, vad fungerar inte? Hur är det testat? Vilka delar testas inte?
 ​
 | Vad testas      | input | output | utfall PASS/FAIL |
 | --------- | --------- | ------ | ------- |
 |           |           |        |         |
-​
+​ -->
+
+Testrapport för `FakePerson` klassen:
+![test](src/images/test-fake-person.png)
+
+Testrapport för `SimpleAi` klassen:
+![test](src/images/test-simple-ai.png)
+
+Testrapport för `utils` modulen: 
+![test](src/images/test-utils.png)
+
+Testrapport för `validations` modulen:
+![test](src/images/test-validations.png)
+
+Test coverage:
+![test](src/images/test-coverage.png)
+
+
+
+
 ​
 ## Kodkvalitetskrav
 ​
