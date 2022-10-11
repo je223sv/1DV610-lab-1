@@ -4,12 +4,12 @@ import { generateSpecialCharacters } from '../utils/generateSpecialCharacters.js
 import { generateLetters } from '../utils/generateLetters.js'
 import SimpleAi from '../simpleAi/index.js'
 import { MAX_AGE, MIN_AGE, VALID_GENDERS } from '../data/constants.js'
-import { countries } from '../data/countryList.js'
+import { countries } from '../data/countries.js'
 import {
     menFirstNames,
     womenFirstNames,
     lastNames
-} from '../data/nameList.js'
+} from '../data/names.js'
 import {
     validatePositiveNumber,
     validateGender,

@@ -2,7 +2,7 @@ import { generateLetters } from '../generateLetters.js'
 import { generateRandomNumExclusive } from '../generateRandomNumExclusive.js'
 import { generateRandomNumInclusive } from '../generateRandomNumInclusive.js'
 import { generateSpecialCharacters } from '../generateSpecialCharacters.js'
-import { letters, specialCharacters } from '../../data/characterList.js'
+import { letters, specialCharacters } from '../../data/characters.js'
 
 
 describe('generateLetters', () => {

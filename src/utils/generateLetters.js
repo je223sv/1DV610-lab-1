@@ -1,4 +1,4 @@
-import { letters } from '../data/characterList.js'
+import { letters } from '../data/characters.js'
 import { generateRandomNumExclusive } from '../utils/generateRandomNumExclusive.js'
 import { validatePositiveNumber } from '../validations/index.js'
 
