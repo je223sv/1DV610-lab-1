@@ -67,18 +67,23 @@ Använd `npm test` kommandot i terminalen för att köra samtliga enhetstester o
 ​ -->
 
 Testrapport för `FakePerson` klassen:
+
 ![test](src/images/test-fake-person.png)
 
 Testrapport för `SimpleAi` klassen:
+
 ![test](src/images/test-simple-ai.png)
 
-Testrapport för `utils` modulen: 
+Testrapport för `utils` modulen:
+
 ![test](src/images/test-utils.png)
 
 Testrapport för `validations` modulen:
+
 ![test](src/images/test-validations.png)
 
 Test coverage:
+
 ![test](src/images/test-coverage.png)
 
 
