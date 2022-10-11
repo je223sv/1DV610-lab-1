@@ -129,4 +129,23 @@ if (fakePerson.shouldHitMe(aiScore, 'risky')) {
 }
 ```
 
+### Keeping Score
+```javascript
+import FakePerson from 'fake-person'
+
+const fakePerson = new FakePerson()
+
+// Get score
+const currentScore = fakePerson.getScore() // 0
+
+// Set score
+fakePerson.setScore(currentScore + 10)
+```
+
+## Version
+1.0.0
+
+## License
+ISC
+
 
