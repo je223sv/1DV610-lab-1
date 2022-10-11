@@ -324,7 +324,7 @@ export default class FakePerson {
    * @param {('expert'|'average'|'beginner')} [skillLevel=average] - Determines how likely the fake person is to answer correctly.
    * @returns {string} - The answer given by the fake person.
    */
-  answerQuizQuestion = ({ options, correctAnswer }, skillLevel = 'average') => {
+  answerQuizQuestion = ({ options, correctAnswer }, skillLevel) => {
     return this.#ai.answerQuizQuestion({ options, correctAnswer }, skillLevel)
   }
 
@@ -336,7 +336,7 @@ export default class FakePerson {
    * @param {('risky'|'safe')} [mode=safe] - Determines how likely the the fake person is to continue.
    * @returns {boolean} - true or false.
    */
-  shouldHitMe = (currentScore, mode = 'safe') => {
+  shouldHitMe = (currentScore, mode) => {
     return this.#ai.shouldHitMe(currentScore, mode)
   }
 }

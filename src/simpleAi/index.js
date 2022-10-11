@@ -64,10 +64,10 @@ export default class SimpleAi {
    * @param {object} question - An object containing the options as an array and the correct answer as a string.
    * @param {Array} question.options - The options to choose from.
    * @param {string} question.correctAnswer - The element from the options array that is correct.
-   * @param {('expert'|'average'|'beginner')} skillLevel - Determines how likely the fake person is to answer correctly.
+   * @param {('expert'|'average'|'beginner')} [skillLevel=average] - Determines how likely the fake person is to answer correctly.
    * @returns {string} - The answer given by the fake person.
    */
-  answerQuizQuestion = ({ options, correctAnswer }, skillLevel) => {
+  answerQuizQuestion = ({ options, correctAnswer }, skillLevel = 'average') => {
     validateOptions(options)
     validateCorrectAnswer(correctAnswer, options)
     validateSkillLevel(skillLevel)
@@ -115,10 +115,10 @@ export default class SimpleAi {
    * Black Jack.
    *
    * @param {number} currentScore - The current score of the fake person.
-   * @param {('risky'|'safe')} mode - Determines how likely the the fake person is to continue.
+   * @param {('risky'|'safe')} [mode=safe] - Determines how likely the the fake person is to continue.
    * @returns {boolean} - true or false.
    */
-  shouldHitMe = (currentScore, mode) => {
+  shouldHitMe = (currentScore, mode = 'safe') => {
     validateWholeNumber(currentScore)
     validateMode(mode)
 
