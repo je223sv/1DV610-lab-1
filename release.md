@@ -28,9 +28,9 @@ Förtydligande: Examinator kommer sätta betyg oberoende på vad ni anser.
 
 För att göra det lätt för andra utvecklare att använda min modul, så har jag publicerat det på npmjs.com. Därmed, kan man enkelt installera modulen som ett "dependency" i sin applikation genom att skriva `npm i fake-person` i terminalen.
 
-För de som vill läsa källkoden, så är den organiserad i submoduler och var funktion/method och klass har tillhörande JSDOC som förtydligar dess syfte.
+För de som vill läsa källkoden, så är den organiserad i submoduler där varje funktion/metod och klass har tillhörande JSDOC som förtydligar dess syfte.
 
-Utöver detta, har jag skrivit en [README](https://github.com/je223sv/1DV610-lab-1#readme) där jag går igenom alla publika metoder med exempel på hur de kan användas.
+Utöver detta, har jag skrivit en [README](https://github.com/je223sv/1DV610-lab-1#readme) där jag går igenom hur man installerar modulen och använder dess publika metoder.
 ​
 ## Beskrivning av min kod
 <!-- Beskriv din kod på en hög abstraktionsnivå. En kort beskrivning av dina viktigaste klasser och metoder. Skapa gärna ett klassdiagram som bild. Använd det ni lärt er så här långt i 1dv607. Kommunicera så att jag kan förstå. -->
