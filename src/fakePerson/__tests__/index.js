@@ -1,7 +1,7 @@
 import FakePerson from '../index.js'
-import { menFirstNames, womenFirstNames, lastNames } from '../data/nameList'
-import { countries } from '../data/countryList.js'
-import { MAX_AGE, MIN_AGE, VALID_GENDERS } from '../data/constants.js'
+import { menFirstNames, womenFirstNames, lastNames } from '../../data/nameList.js'
+import { countries } from '../../data/countryList.js'
+import { MAX_AGE, MIN_AGE, VALID_GENDERS } from '../../data/constants.js'
 
 describe('Fake person', () => {
     const fakePerson = new FakePerson()

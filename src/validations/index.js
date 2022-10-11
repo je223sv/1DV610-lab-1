@@ -1,4 +1,4 @@
-import { VALID_GENDERS, VALID_MODES, VALID_SKILL_LEVELS } from "../data/constants"
+import { VALID_GENDERS, VALID_MODES, VALID_SKILL_LEVELS } from "../data/constants.js"
 
 /**
  * Validates whether the provided input is a string. 
