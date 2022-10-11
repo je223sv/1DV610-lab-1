@@ -37,7 +37,7 @@ Utöver detta, har jag skrivit en [README](https://github.com/je223sv/1DV610-lab
 
 Det finns två klasser i denna modul; `FakePerson` och `SimpleAi`. Med `FakePerson` skapas en “låtsas” person med slumpmässigt genererade egenskaper såsom namn, ålder och kön som kan användas när man behöver “dum” användardata.
 
-`FakePerson` är dessutom en komposit klass som använder sig av `SimpleAi` för metoder som kan användas för att simulera en AI i enklare spel såsom guess the number, the hanging man, rock paper scissors, frågesporter, black jack, osv.
+Förutom att `FakePerson` är huvudklassen där all funktionalitet utgår ifrån, så är det även en komposit klass som använder sig av `SimpleAi` för metoder som kan användas för att simulera en AI i enklare spel såsom guess the number, the hanging man, rock paper scissors, frågesporter, black jack, osv.
 
 ![UML class diagram](src/images/class-diagram.png)
 
