@@ -41,6 +41,10 @@ Det finns två klasser i denna modul; `FakePerson` och `SimpleAi`. Med `FakePers
 
 ![UML class diagram](src/images/class-diagram.png)
 
+Modulen har dessutom en “utility” och en “validations” submodul med funktioner som används flitigt av dessa klasser för att undvika repetition och för att säkerhetsställa att argument till funktioner är giltiga.
+
+Se [README](https://github.com/je223sv/1DV610-lab-1#readme) för mer information.
+
 ## Hur jag testat
 <!-- Beskriv hur du kommit fram till om din kod fungerar. -->
 För att testa denna modul, så har jag använt automatiska enhetsheter med testramverket **Jest**. Varje klass och submodul har sin egen testfil som går att hitta i en **__tests__** mapp:
