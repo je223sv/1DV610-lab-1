@@ -48,7 +48,7 @@ Se [README](https://github.com/je223sv/1DV610-lab-1#readme) för mer information
 ## Hur jag testat
 <!-- Beskriv hur du kommit fram till om din kod fungerar. -->
 
-För att testa denna modul, så har jag använt testramverket **Jest** och skrivit automatiska enhetstester. Varje "submodul" har sin egna testfil som går att hitta i en **\__tests__** map:
+För att testa denna modul, så har jag använt testramverket **Jest** och skrivit automatiska enhetstester. Varje "submodul" har sin egna testfil som går att hitta i en `__tests__` map:
 
 ![test](src/images/testade-submoduler.png)
 
