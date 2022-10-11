@@ -9,14 +9,14 @@ import { validatePositiveNumber } from '../validations/index.js'
  * @returns {string} - Special character(s).
  */
 export const generateSpecialCharacters = (num) => {
-    validatePositiveNumber(num)
+  validatePositiveNumber(num)
 
-    let randomCharacters = ''
+  let randomCharacters = ''
 
-    for (let i = 0; i < num; i++) {
-        const randomIndex = generateRandomNumExclusive(specialCharacters.length, 0)
-        randomCharacters += specialCharacters[randomIndex]
-    }
-            
-    return randomCharacters
+  for (let i = 0; i < num; i++) {
+    const randomIndex = generateRandomNumExclusive(specialCharacters.length, 0)
+    randomCharacters += specialCharacters[randomIndex]
+  }
+
+  return randomCharacters
 }

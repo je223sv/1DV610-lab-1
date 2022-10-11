@@ -9,14 +9,14 @@ import { validatePositiveNumber } from '../validations/index.js'
  * @returns {string} - Letter(s).
  */
 export const generateLetters = (num) => {
-    validatePositiveNumber(num)
+  validatePositiveNumber(num)
 
-    let randomLetters = ''
+  let randomLetters = ''
 
-    for (let i = 0; i < num; i++) {
-        const randomIndex = generateRandomNumExclusive(letters.length, 0)
-        randomLetters += letters[randomIndex]
-    }
+  for (let i = 0; i < num; i++) {
+    const randomIndex = generateRandomNumExclusive(letters.length, 0)
+    randomLetters += letters[randomIndex]
+  }
 
-    return randomLetters
+  return randomLetters
 }

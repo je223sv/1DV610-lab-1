@@ -1,4 +1,4 @@
-import { validatePositiveNumber, validateWholeNumber } from "../validations/index.js"
+import { validatePositiveNumber, validateWholeNumber } from '../validations/index.js'
 
 /**
  * Generate a random number between max and min where max is inclusive.
@@ -8,12 +8,12 @@ import { validatePositiveNumber, validateWholeNumber } from "../validations/inde
  * @returns {number} - A random number between max and min.
  */
 export const generateRandomNumInclusive = (max, min = 0) => {
-    validatePositiveNumber(max)
-    validateWholeNumber(min)
+  validatePositiveNumber(max)
+  validateWholeNumber(min)
 
-    if (max < min) {
-        throw new Error('max must be bigger than or equal to min.')
-    }
+  if (max < min) {
+    throw new Error('max must be bigger than or equal to min.')
+  }
 
-    return Math.floor(Math.random() * (max - min + 1) + min)
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
