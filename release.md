@@ -86,9 +86,9 @@ Test coverage:
 
 ![test](src/images/test-coverage.png)
 
+Baserat på "coverage" rapporten ovan, så är testningen mer eller mindre heltäckande med reservation för ytterligare något "edge case" som möjligen kan dyka upp vid seriös användning av modulen.
 
-
-
+Det enda problemet jag stötte på var hur jag skulle testa delegerande metoder utan att upprepa testning. I detta fall, så delegerar `FakePerson` en del arbetsuppgifter till `SimpleAi`. Då metoderna är vältestade i `SimpleAi`, så valde jag att inte testa de delegerande metoderna i `FakePerson` klassen vilket förklarar varför `FakePerson` inte har 100% “coverage”.
 ​
 ## Kodkvalitetskrav
 ​
