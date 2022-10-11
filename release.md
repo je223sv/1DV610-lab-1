@@ -37,9 +37,8 @@ Det finns två klasser i denna modul; `FakePerson` och `SimpleAi`. Med `FakePers
 
 `FakePerson` är dessutom en komposit klass som använder sig av `SimpleAi` för metoder som kan användas för att simulera en AI i enklare spel såsom guess the number, the hanging man, rock paper scissors, frågesporter, black jack, osv.
 
--class diagram here-
+![UML class diagram](src/images/class-diagram.png)
 
-​
 ## Hur jag testat
 <!-- Beskriv hur du kommit fram till om din kod fungerar. -->
 För att testa denna modul, så har jag använt automatiska enhetsheter med testramverket **Jest**. Varje klass och submodul har sin egen testfil som går att hitta i en **__tests__** mapp:
@@ -48,7 +47,7 @@ För att testa denna modul, så har jag använt automatiska enhetsheter med test
 
 Mellan dessa testfiler finns det totalt 79 enhetstester:
 
--bild-
+![test](src/images/test.png)
 
 För att köra samtliga enhetstester, så kan man använda sig av `npm test` kommandot.
 
