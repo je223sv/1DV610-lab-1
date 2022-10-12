@@ -93,9 +93,9 @@ const aiHand = fakePerson.playRockPaperScissors() // example output: paper
 > ***skillLevel***: A string that equals either 'beginner', 'average' or 'expert' (defaults to: average)
 
 Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``:
-- a 'beginner' ai is 6/10 likely to answer correctly
-- an 'average' ai is 7/10 likely to answer correctly
-- an 'expert' ai is 8/10 likely to answer correctly
+- a ``beginner`` ai is 6/10 likely to return the ``correctAnswer``
+- an ``average`` ai is 7/10 likely to return the ``correctAnswer``
+- an ``expert`` ai is 8/10 likely to return the ``correctAnswer``
 
 ```javascript
 import FakePerson from 'fake-person'
