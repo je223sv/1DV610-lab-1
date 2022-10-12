@@ -77,7 +77,7 @@ const rollThreeDice = fakePerson.rollDice(10, 3) // example output: [9, 3, 5]
 ```
 
 #### playRockPaperScissors()
-Returns rock, paper or scissors as a `string`.
+Method that simulates an AI's choice in rock, paper, scissors, by returning either "rock", "paper" or "scissors".
 ```javascript
 import FakePerson from 'fake-person'
 
@@ -86,16 +86,16 @@ const fakePerson = new FakePerson()
 const aiHand = fakePerson.playRockPaperScissors() // example output: paper 
 ```
 #### answerQuizQuestion({ *options*, *correctAnswer* }, *skillLevel*)
-> ***options***: An array with more than one item.
+> ***options***: An *array* with more than one item
 
-> ***correctAnswer***: A string that must exist in the ``options`` array
+> ***correctAnswer***: A *string* that must exist in the ``options`` array
 
-> ***skillLevel***: A string that equals either 'beginner', 'average' or 'expert' (defaults to: average)
+> ***skillLevel***: A *string* that equals either 'beginner', 'average' or 'expert' (defaults to: average)
 
 Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``:
-- a ``beginner`` ai is 6/10 likely to return the ``correctAnswer``
-- an ``average`` ai is 7/10 likely to return the ``correctAnswer``
-- an ``expert`` ai is 8/10 likely to return the ``correctAnswer``
+- a ``beginner`` ai is 60% likely to return the ``correctAnswer``
+- an ``average`` ai is 70% likely to return the ``correctAnswer``
+- an ``expert`` ai is 80% likely to return the ``correctAnswer``
 
 ```javascript
 import FakePerson from 'fake-person'
