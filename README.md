@@ -60,8 +60,9 @@ const availableLetters = 'abcdefghijklmnopqrstuvxyz'.split('')
 const aiLetterGuess = fakePerson.makeSelection(availableLetters) // example output: j
 ```
 #### rollDice(*faces*, *numOfDice*)
-> ***faces***: A positive `number`
-> ***numOfDice***: A positive `number`
+> ***faces***: `number`
+
+> ***numOfDice***: `number`
 
 Rolls one or many dice and return the results as an `array`.
 
