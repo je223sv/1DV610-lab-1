@@ -49,12 +49,12 @@ import FakePerson from 'fake-person'
 
 const fakePerson = new FakePerson()
 
-// Guess the number
+// Example use case: Guess the number
 const correctNumber = 7
 const numbers = [...Array(10).keys()]
 const aiNumberGuess = fakePerson.makeSelection(numbers) // example output: 4
 
-// The hanging man
+// Example use case: The hanging man
 const correctWord = 'jazz'
 const availableLetters = 'abcdefghijklmnopqrstuvxyz'.split('')
 const aiLetterGuess = fakePerson.makeSelection(availableLetters) // example output: j
