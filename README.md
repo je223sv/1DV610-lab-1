@@ -86,14 +86,16 @@ const fakePerson = new FakePerson()
 const aiHand = fakePerson.playRockPaperScissors() // example output: paper 
 ```
 #### answerQuizQuestion({ *options*, *correctAnswer* }, *skillLevel*)
-> ***options***: An array with more than one item. 
+> ***options***: An array with more than one item.
 
-> ***correctAnswer***: A string that must exist in ``options``.
+> ***correctAnswer***: A string that must exist in the ``options`` array
 
 > ***skillLevel***: A string that equals either 'beginner', 'average' or 'expert' (defaults to: average)
 
-Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``.
-
+Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``:
+- a 'beginner' ai is 6/10 likely to answer correctly
+- an 'average' ai is 7/10 likely to answer correctly
+- an 'expert' ai is 8/10 likely to answer correctly
 
 ```javascript
 import FakePerson from 'fake-person'
@@ -106,15 +108,9 @@ const question = {
 	correctAnswer: 'Stockholm'
 }
 
-// 'beginner' ai is 60% likely to return the correct answer
-const aiAnswerAsBeginner = fakePerson.answerQuizQuestion(question, 'beginner') // example output: Helsinki
-
-// 'average' ai is 70% likely to return the correct answer
-const aiAnswerAsAverage = 
-fakePerson.answerQuizQuestion(question, 'average') // example output: Copenhagen
-
-// 'expert' ai is 80% likely to return the correct answer
-const aiAnswerAsExpert = fakePerson.answerQuizQuestion(question, 'expert') // example output: Stockholm
+const beginnerAiAnswer = fakePerson.answerQuizQuestion(question, 'beginner') // example output: Helsinki
+const averageAiAnswer = fakePerson.answerQuizQuestion(question, 'average') // example output: Oslo
+const expertAiAnswer = fakePerson.answerQuizQuestion(question, 'expert') // example output: Stockholm
 ```
 
 #### shouldHitMe(*currentScore*, *mode*)
