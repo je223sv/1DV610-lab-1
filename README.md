@@ -40,7 +40,7 @@ Beside generating fake user data, a fake person can also be used as an AI player
 
 #### makeSelection(*options*)
 
-> ***options***: ``Array`
+> ***options***: ``Array``
 
 Returns a random item from an `array`.
 
