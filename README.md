@@ -42,7 +42,7 @@ Beside generating fake user data, a fake person can also be used as an AI player
 
 > ***options***: ``Array``
 
-Returns a random item from an `array`.
+Returns a random item from an `options`.
 
 ```javascript
 import FakePerson from 'fake-person'
