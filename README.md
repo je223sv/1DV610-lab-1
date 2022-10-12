@@ -72,7 +72,7 @@ import FakePerson from 'fake-person'
 const fakePerson = new FakePerson()
 
 const rollOneDice = fakePerson.rollDice(6, 1) // example output: [4] 
-const rollTwoDice= fakePerson.rollDice(6, 2) // example output: [2, 6] 
+const rollTwoDice = fakePerson.rollDice(6, 2) // example output: [2, 6] 
 const rollThreeDice = fakePerson.rollDice(10, 3) // example output: [9, 3, 5] 
 ```
 
@@ -86,11 +86,14 @@ const fakePerson = new FakePerson()
 const aiHand = fakePerson.playRockPaperScissors() // example output: paper 
 ```
 #### answerQuizQuestion({ *options*, *correctAnswer* }, *skillLevel*)
-> ***options***: An `array` with a length greater than 1.
-> ***correctAnswer***: A `string` that exists in the options array.
-> ***skillLevel***:  A `string` that equals either 'beginner', 'average' or 'expert'.
+> ***options***: ``array``
 
-Returns an answer as a `string`. The likelihood of returning the `correctAnswer` from the `options`  is based on the provided `skillLevel`.
+> ***correctAnswer***: ``string`` (must exist in the ``options``)
+
+> ***skillLevel***: ``string`` | defaults to: ``average``
+
+Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``.
+
 
 ```javascript
 import FakePerson from 'fake-person'
