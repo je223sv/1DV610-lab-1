@@ -129,8 +129,4 @@ Efter att ha läst **kapitel 3**, så kan jag konstatera att det har funnits en 
 
 När det kommer till **Don't repeat yourself**, så brukar jag vara hyfsat duktigt. Men under reflektionen, så blev jag medveten om att mina "utility" funktioner [generateLetters](https://github.com/je223sv/1DV610-lab-1/blob/a8590265abe4675a5ec21310d760be3eec858fb0/src/utils/generateLetters.js#L11) och [generateSpecialCharacters](https://github.com/je223sv/1DV610-lab-1/blob/a8590265abe4675a5ec21310d760be3eec858fb0/src/utils/generateSpecialCharacters.js#L11) mer eller mindre har samma implementation. 
 
-**"Don't repeat yourself"** är en annan regel som jag har varit bekant med under en längre tid.
-
-Tyvärr, så blev jag medveten om att
-
 Summa summarum, så har jag lärt mig otroligt mycket från denna laboration och kapitel 2-3 i boken. Även om min kod inte är perfekt i nuläget, så hade jag nu kunnat förbättra den utifrån denna reflektion. Detta om något bevisar hur viktigt det är att ta ett steg tillbaka och granska din kod för att göra den enklare att läsa och förstå.
