@@ -7,6 +7,7 @@ This library will come in handy when you need to generate dummy user data or if 
 **🚨 NOTICE**: This library was created for a school project.
 
 ## Installation
+Using npm:
 ```bash
 npm i fake-person
 ```
@@ -39,7 +40,7 @@ Beside generating fake user data, a fake person can also be used as an AI player
 
 #### makeSelection(*options*)
 
-> ***options***: An `array` with a length greater than 1.
+> ***options***: ``Array`
 
 Returns a random item from an `array`.
 
