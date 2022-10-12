@@ -77,7 +77,7 @@ const rollThreeDice = fakePerson.rollDice(10, 3) // example output: [9, 3, 5]
 ```
 
 #### playRockPaperScissors()
-Returns a `string` as either 'rock', 'paper' or 'scissors'.
+Returns rock, paper or scissors as a `string`.
 ```javascript
 import FakePerson from 'fake-person'
 
