@@ -118,7 +118,7 @@ const expertAiAnswer = fakePerson.answerQuizQuestion(question, 'expert') // exam
 
 > ***mode***: A *string* that equals either 'risky' or 'safe' (defaults to: safe)
 
-Method that returns either true or false based on ``currentScore`` and ``mode``.
+Method that simulates an AI's decision to receive a new card or not in the game of Black Jack by returning either true or false based on ``currentScore`` and ``mode``.
 
 A 'risky' AI will continue as long as ``currentScore`` is 18 and below while a 'safe' AI will continue as long as ``currentScore`` is 16 and below.
 
