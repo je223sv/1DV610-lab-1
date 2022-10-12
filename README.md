@@ -40,9 +40,9 @@ Beside generating fake user data, a fake person can also be used as an AI player
 
 #### makeSelection(*options*)
 
-> ***options***: ``Array``
+> ***options***: An *array* with more than one item
 
-Returns a random item from `options`.
+Method that returns a random element from an array.
 
 ```javascript
 import FakePerson from 'fake-person'
@@ -60,11 +60,11 @@ const availableLetters = 'abcdefghijklmnopqrstuvxyz'.split('')
 const aiLetterGuess = fakePerson.makeSelection(availableLetters) // example output: j
 ```
 #### rollDice(*faces*, *numOfDice*)
-> ***faces***: `number`
+> ***faces***: A positive *number*
 
-> ***numOfDice***: `number`
+> ***numOfDice***: A positive *number*
 
-Rolls one or many dice and return the results as an `array`.
+Method that returns an array containing the result of one or more dice rolls.
 
 ```javascript
 import FakePerson from 'fake-person'
