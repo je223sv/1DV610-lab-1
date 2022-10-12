@@ -114,10 +114,10 @@ const expertAiAnswer = fakePerson.answerQuizQuestion(question, 'expert') // exam
 ```
 
 #### shouldHitMe(*currentScore*, *mode*)
-> ***currentScore***: A whole `number`.
-> ***mode***: A `string` that equals either 'risky' or 'safe'.
+> ***currentScore***: A whole `number`
+> ***mode***: A `string` that equals either 'risky' or 'safe' (defaults to: safe)
 
-Returns a `boolean` based on the `currentScore` and the `mode`.
+Method that returns either true or false based on ``currentScore`` and ``mode``.
 ```javascript
 import FakePerson from 'fake-person'
 
