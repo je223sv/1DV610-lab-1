@@ -86,11 +86,11 @@ const fakePerson = new FakePerson()
 const aiHand = fakePerson.playRockPaperScissors() // example output: paper 
 ```
 #### answerQuizQuestion({ *options*, *correctAnswer* }, *skillLevel*)
-> ***options***: ``array``
+> ***options***: array
 
-> ***correctAnswer***: ``string`` (must exist in the ``options``)
+> ***correctAnswer***: string (must exist ``options``)
 
-> ***skillLevel***: ``string`` | defaults to: ``average``
+> ***skillLevel***: string (defaults to: average)
 
 Method that simulates an AI's answer to a quiz question by returning an option from the provided ``options`` array. The probability that the returned option is the ``correctAnswer`` is based on the ``skillLevel``.
 
