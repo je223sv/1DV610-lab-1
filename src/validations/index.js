@@ -71,8 +71,8 @@ export const validateArray = (input) => {
 export const validateOptions = (input) => {
   validateArray(input)
 
-  if (input.length < 2) {
-    throw new Error('The options array must have more than 1 item.')
+  if (input.length < 1) {
+    throw new Error('The options array must have at least one 1 item.')
   }
 }
 

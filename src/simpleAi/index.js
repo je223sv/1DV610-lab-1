@@ -22,6 +22,10 @@ export default class SimpleAi {
   makeSelection = (options) => {
     validateOptions(options)
 
+    if (options.length === 1) {
+      return options[0]
+    }
+
     const randomIndex = generateRandomNumExclusive(options.length)
     const selection = options[randomIndex]
     return selection
