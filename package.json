@@ -1,7 +1,7 @@
 {
   "name": "fake-person",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A library for creating a fake person with mock properties and simple ai capabilities.",
   "main": "src/index.js",
   "repository": {
@@ -20,7 +20,8 @@
   "dependencies": {
     "@lnu/eslint-config": "^1.1.6",
     "jest": "^29.1.2"
-  }, "eslintConfig": {
+  },
+  "eslintConfig": {
     "extends": "@lnu"
   }
 }
