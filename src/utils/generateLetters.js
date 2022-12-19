@@ -1,6 +1,5 @@
 import { letters } from '../data/characters.js'
-import { generateRandomNumExclusive } from '../utils/generateRandomNumExclusive.js'
-import { validatePositiveNumber } from '../validations/index.js'
+import { generateCharacters } from './generateCharacter.js'
 
 /**
  * Generate a random letter(s).
@@ -9,14 +8,5 @@ import { validatePositiveNumber } from '../validations/index.js'
  * @returns {string} - Letter(s).
  */
 export const generateLetters = (num) => {
-  validatePositiveNumber(num)
-
-  let randomLetters = ''
-
-  for (let i = 0; i < num; i++) {
-    const randomIndex = generateRandomNumExclusive(letters.length, 0)
-    randomLetters += letters[randomIndex]
-  }
-
-  return randomLetters
+  return generateCharacters(num, letters)
 }
