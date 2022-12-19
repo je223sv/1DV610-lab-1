@@ -42,7 +42,7 @@ export default class SimpleAi {
     validateFaces(faces)
     validateNumOfDice(numOfDice)
 
-    return this.generateRolls(faces, numOfDice)
+    return this.#generateRolls(faces, numOfDice)
   }
 
   /**
@@ -52,7 +52,7 @@ export default class SimpleAi {
    * @param {number} numOfDice - The number of dice that should be rolled.
    * @returns {Array} - Array containing the result from the dice roll(s).
    */
-  generateRolls = (faces, numOfDice) => {
+  #generateRolls = (faces, numOfDice) => {
     const rolls = []
 
     for (let i = 0; i < numOfDice; i++) {
@@ -86,6 +86,18 @@ export default class SimpleAi {
     validateCorrectAnswer(correctAnswer, options)
     validateSkillLevel(skillLevel)
 
+    return this.#generateAnswer(skillLevel, options, correctAnswer)
+  }
+
+  /**
+   * Generate an answer.
+   *
+   * @param {*} skillLevel - Determines how likely the fake person is to answer correctly.
+   * @param {*} options - The options to choose from.
+   * @param {*} correctAnswer - The element from the options array that is correct.
+   * @returns {string} - The answer given by the fake person.
+   */
+  #generateAnswer = (skillLevel, options, correctAnswer) => {
     if (this.#answeredCorrectly(skillLevel)) {
       return correctAnswer
     } else {
