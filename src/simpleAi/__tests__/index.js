@@ -8,6 +8,9 @@ describe('makeSelection', () => {
     it('Should return an item in the options array', () => {
       const options = [1, 2, 3]
       expect(options).toContain(ai.makeSelection(options))
+
+      const oneOption = [1]
+      expect(oneOption).toContain(ai.makeSelection(oneOption))
     })
   })
 
@@ -15,7 +18,6 @@ describe('makeSelection', () => {
     it('Should throw an Error if options is not an array with more than one item', () => {
       expect(() => ai.makeSelection()).toThrow('You must provide an array.')
       expect(() => ai.makeSelection('')).toThrow('You must provide an array.')
-      expect(() => ai.makeSelection([1])).toThrow('The options array must have more than 1 item.')
     })
   })
 })
@@ -104,10 +106,10 @@ describe('answerQuizQuestion', () => {
       expect(() => ai.answerQuizQuestion({ options, correctAnswer: 1 })).toThrow('The correct answer must be a string.')
     })
 
-    it('Should throw an Error if options is not an array with more than one item', () => {
+    it('Should throw an Error if options is not an array with at least one item', () => {
       expect(() => ai.answerQuizQuestion({ correctAnswer })).toThrow('You must provide an array.')
       expect(() => ai.answerQuizQuestion({ options: '', correctAnswer })).toThrow('You must provide an array.')
-      expect(() => ai.answerQuizQuestion({ options: [1], correctAnswer })).toThrow('The options array must have more than 1 item.')
+      expect(() => ai.answerQuizQuestion({ options: [], correctAnswer })).toThrow('The options array must have at least one 1 item.')
     })
 
     it('Should throw an Error if the skill level is not valid (i.e. not beginner, average or expert)', () => {

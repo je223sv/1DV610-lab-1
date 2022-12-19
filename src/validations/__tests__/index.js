@@ -88,7 +88,7 @@ describe('Validating arrays', () => {
 
   it('Should validate options array', () => {
     expect(() => validateOptions([1, 2, 3])).not.toThrow()
-    expect(() => validateOptions([])).toThrow('The options array must have more than 1 item.')
+    expect(() => validateOptions([])).toThrow('The options array must have at least one 1 item.')
     expect(() => validateOptions()).toThrow('You must provide an array.')
     expect(() => validateOptions('test')).toThrow('You must provide an array.')
   })
@@ -114,6 +114,6 @@ describe('Validating correct answer', () => {
   it('Should throw an Error if options is not an array with more than 1 item', () => {
     expect(() => validateCorrectAnswer(correctAnswer)).toThrow('You must provide an array.')
     expect(() => validateCorrectAnswer(correctAnswer, 'test')).toThrow('You must provide an array.')
-    expect(() => validateCorrectAnswer(correctAnswer, [])).toThrow('The options array must have more than 1 item.')
+    expect(() => validateCorrectAnswer(correctAnswer, [])).toThrow('The options array must have at least one 1 item.')
   })
 })
