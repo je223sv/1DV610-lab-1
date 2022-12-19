@@ -118,30 +118,30 @@ describe('answerQuizQuestion', () => {
   })
 })
 
-describe('shouldHitMe', () => {
+describe('shouldGetNewCard', () => {
   describe('Valid input', () => {
     it('Should return the correct value for the risky mode', () => {
-      expect(ai.shouldHitMe(0, 'risky')).toBeTruthy()
-      expect(ai.shouldHitMe(18, 'risky')).toBeTruthy()
-      expect(ai.shouldHitMe(19, 'risky')).toBeFalsy()
+      expect(ai.shouldGetNewCard(0, 'risky')).toBeTruthy()
+      expect(ai.shouldGetNewCard(18, 'risky')).toBeTruthy()
+      expect(ai.shouldGetNewCard(19, 'risky')).toBeFalsy()
     })
 
     it('Should return the correct value for the safe mode', () => {
-      expect(ai.shouldHitMe(0, 'safe')).toBeTruthy()
-      expect(ai.shouldHitMe(16, 'safe')).toBeTruthy()
-      expect(ai.shouldHitMe(17, 'safe')).toBeFalsy()
-      expect(ai.shouldHitMe(18)).toBeFalsy()
+      expect(ai.shouldGetNewCard(0, 'safe')).toBeTruthy()
+      expect(ai.shouldGetNewCard(16, 'safe')).toBeTruthy()
+      expect(ai.shouldGetNewCard(17, 'safe')).toBeFalsy()
+      expect(ai.shouldGetNewCard(18)).toBeFalsy()
     })
   })
 
   describe('Invalid input', () => {
     it('Should throw an Error if currentValue is not a whole number', () => {
-      expect(() => ai.shouldHitMe('1', 'risky')).toThrow('You must provide a number.')
-      expect(() => ai.shouldHitMe(-1, 'risky')).toThrow('You must provide a whole number.')
+      expect(() => ai.shouldGetNewCard('1', 'risky')).toThrow('You must provide a number.')
+      expect(() => ai.shouldGetNewCard(-1, 'risky')).toThrow('You must provide a whole number.')
     })
 
     it('Should throw an Error if the mode is not valid (i.e. not risky or safe)', () => {
-      expect(() => ai.shouldHitMe(0, 'cool')).toThrow('You must provide a valid mode such as risky or safe.')
+      expect(() => ai.shouldGetNewCard(0, 'cool')).toThrow('You must provide a valid mode such as risky or safe.')
     })
   })
 })

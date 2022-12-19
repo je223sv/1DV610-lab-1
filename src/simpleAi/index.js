@@ -122,7 +122,7 @@ export default class SimpleAi {
    * @param {('risky'|'safe')} [mode=safe] - Determines how likely the the fake person is to continue.
    * @returns {boolean} - true or false.
    */
-  shouldHitMe = (currentScore, mode = 'safe') => {
+  shouldGetNewCard = (currentScore, mode = 'safe') => {
     validateWholeNumber(currentScore)
     validateMode(mode)
 

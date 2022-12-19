@@ -336,7 +336,7 @@ export default class FakePerson {
    * @param {('risky'|'safe')} [mode=safe] - Determines how likely the the fake person is to continue.
    * @returns {boolean} - true or false.
    */
-  shouldHitMe = (currentScore, mode) => {
-    return this.#ai.shouldHitMe(currentScore, mode)
+  shouldGetNewCard = (currentScore, mode) => {
+    return this.#ai.shouldGetNewCard(currentScore, mode)
   }
 }
