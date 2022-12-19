@@ -22,12 +22,12 @@ describe('makeSelection', () => {
   })
 })
 
-describe('rollDice', () => {
+describe('getDiceValue', () => {
   describe('Valid input', () => {
     it('Should return correct values', () => {
       const faces = 6
       const numOfDice = 2
-      const rolls = ai.rollDice(faces, numOfDice)
+      const rolls = ai.getDiceValue(faces, numOfDice)
 
       expect(rolls).toHaveLength(numOfDice)
       expect(rolls.every(roll => roll <= faces && roll >= MIN_FACE_VALUE)).toBeTruthy()
@@ -36,21 +36,21 @@ describe('rollDice', () => {
 
   describe('Invalid input', () => {
     it('Should throw an Error if arguments are omitted', () => {
-      expect(() => ai.rollDice()).toThrow('Faces must be a number.')
-      expect(() => ai.rollDice(6)).toThrow('Number of dice must be a number.')
+      expect(() => ai.getDiceValue()).toThrow('Faces must be a number.')
+      expect(() => ai.getDiceValue(6)).toThrow('Number of dice must be a number.')
     })
 
     it('Should throw an Error if faces is not a positive number', () => {
-      expect(() => ai.rollDice('1', 2)).toThrow('Faces must be a number.')
-      expect(() => ai.rollDice(0, 2)).toThrow('Faces must be a positive number.')
-      expect(() => ai.rollDice(-1, 2)).toThrow('Faces must be a positive number.')
+      expect(() => ai.getDiceValue('1', 2)).toThrow('Faces must be a number.')
+      expect(() => ai.getDiceValue(0, 2)).toThrow('Faces must be a positive number.')
+      expect(() => ai.getDiceValue(-1, 2)).toThrow('Faces must be a positive number.')
     })
 
     it('Should throw an Error if numOfDice is not a positive number', () => {
-      expect(() => ai.rollDice(6)).toThrow('Number of dice must be a number.')
-      expect(() => ai.rollDice(6, '1')).toThrow('Number of dice must be a number.')
-      expect(() => ai.rollDice(6, 0)).toThrow('Number of dice must be a positive number.')
-      expect(() => ai.rollDice(6, -1)).toThrow('Number of dice must be a positive number.')
+      expect(() => ai.getDiceValue(6)).toThrow('Number of dice must be a number.')
+      expect(() => ai.getDiceValue(6, '1')).toThrow('Number of dice must be a number.')
+      expect(() => ai.getDiceValue(6, 0)).toThrow('Number of dice must be a positive number.')
+      expect(() => ai.getDiceValue(6, -1)).toThrow('Number of dice must be a positive number.')
     })
   })
 })

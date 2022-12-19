@@ -302,8 +302,8 @@ export default class FakePerson {
    * @param {number} numOfDice - The number of dice that should be rolled.
    * @returns {Array} - Array containing the result from the dice roll(s).
    */
-  rollDice = (faces, numOfDice) => {
-    return this.#ai.rollDice(faces, numOfDice)
+  getDiceValue = (faces, numOfDice) => {
+    return this.#ai.getDiceValue(faces, numOfDice)
   }
 
   /**

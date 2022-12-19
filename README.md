@@ -59,7 +59,7 @@ const correctWord = 'jazz'
 const availableLetters = 'abcdefghijklmnopqrstuvxyz'.split('')
 const aiLetterGuess = fakePerson.makeSelection(availableLetters) // example output: j
 ```
-#### rollDice(*faces*, *numOfDice*)
+#### getDiceValue(*faces*, *numOfDice*)
 > ***faces***: A positive *number*
 
 > ***numOfDice***: A positive *number*
@@ -71,9 +71,9 @@ import FakePerson from 'fake-person'
 
 const fakePerson = new FakePerson()
 
-const rollOneDice = fakePerson.rollDice(6, 1) // example output: [4] 
-const rollTwoDice = fakePerson.rollDice(6, 2) // example output: [2, 6] 
-const rollThreeDice = fakePerson.rollDice(10, 3) // example output: [9, 3, 5] 
+const rollOneDice = fakePerson.getDiceValue(6, 1) // example output: [4] 
+const rollTwoDice = fakePerson.getDiceValue(6, 2) // example output: [2, 6] 
+const rollThreeDice = fakePerson.getDiceValue(10, 3) // example output: [9, 3, 5] 
 ```
 
 #### playRockPaperScissors()
