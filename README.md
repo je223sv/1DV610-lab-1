@@ -113,7 +113,7 @@ const averageAiAnswer = fakePerson.answerQuizQuestion(question, 'average') // ex
 const expertAiAnswer = fakePerson.answerQuizQuestion(question, 'expert') // example output: Stockholm
 ```
 
-#### shouldHitMe(*currentScore*, *mode*)
+#### shouldGetNewCard(*currentScore*, *mode*)
 > ***currentScore***: A whole *number*
 
 > ***mode***: A *string* that equals either 'risky' or 'safe' (defaults to: safe)
@@ -129,7 +129,7 @@ const fakePerson = new FakePerson()
 
 const aiScore = fakePerson.getScore()
 
-if (fakePerson.shouldHitMe(aiScore, 'risky')) {
+if (fakePerson.shouldGetNewCard(aiScore, 'risky')) {
 	// Hit AI with a new card
 }
 ```
