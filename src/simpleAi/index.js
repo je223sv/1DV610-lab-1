@@ -32,7 +32,7 @@ export default class SimpleAi {
   }
 
   /**
-   * Roll one or many dice with X faces.
+   * Return the dice values from one or many rolls.
    *
    * @param {number} faces - The number of faces the dice has.
    * @param {number} numOfDice - The number of dice that should be rolled.
@@ -42,6 +42,17 @@ export default class SimpleAi {
     validateFaces(faces)
     validateNumOfDice(numOfDice)
 
+    return this.generateRolls(faces, numOfDice)
+  }
+
+  /**
+   * Roll one or many dice with X faces.
+   *
+   * @param {number} faces - The number of faces the dice has.
+   * @param {number} numOfDice - The number of dice that should be rolled.
+   * @returns {Array} - Array containing the result from the dice roll(s).
+   */
+  generateRolls = (faces, numOfDice) => {
     const rolls = []
 
     for (let i = 0; i < numOfDice; i++) {
