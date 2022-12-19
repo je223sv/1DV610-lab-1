@@ -69,8 +69,7 @@ export default class SimpleAi {
    * @returns {string} - Rock, paper or scissors.
    */
   playRockPaperScissors = () => {
-    const randomIndex = generateRandomNumExclusive(VALID_ROCK_PAPER_SCISSORS_VALUES.length)
-    return VALID_ROCK_PAPER_SCISSORS_VALUES[randomIndex]
+    return this.makeSelectionFromArray(VALID_ROCK_PAPER_SCISSORS_VALUES)
   }
 
   /**
