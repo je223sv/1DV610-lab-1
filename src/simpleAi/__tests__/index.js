@@ -3,21 +3,21 @@ import { MIN_FACE_VALUE, VALID_ROCK_PAPER_SCISSORS_VALUES } from '../../data/con
 
 const ai = new SimpleAi()
 
-describe('makeSelection', () => {
+describe('makeSelectionFromArray', () => {
   describe('Valid input', () => {
     it('Should return an item in the options array', () => {
       const options = [1, 2, 3]
-      expect(options).toContain(ai.makeSelection(options))
+      expect(options).toContain(ai.makeSelectionFromArray(options))
 
       const oneOption = [1]
-      expect(oneOption).toContain(ai.makeSelection(oneOption))
+      expect(oneOption).toContain(ai.makeSelectionFromArray(oneOption))
     })
   })
 
   describe('Invalid input', () => {
     it('Should throw an Error if options is not an array with more than one item', () => {
-      expect(() => ai.makeSelection()).toThrow('You must provide an array.')
-      expect(() => ai.makeSelection('')).toThrow('You must provide an array.')
+      expect(() => ai.makeSelectionFromArray()).toThrow('You must provide an array.')
+      expect(() => ai.makeSelectionFromArray('')).toThrow('You must provide an array.')
     })
   })
 })

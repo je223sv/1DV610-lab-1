@@ -291,8 +291,8 @@ export default class FakePerson {
    * @param {Array} options - An array of options.
    * @returns {*} - The randomly selected value.
    */
-  makeSelection = (options) => {
-    return this.#ai.makeSelection(options)
+  makeSelectionFromArray = (options) => {
+    return this.#ai.makeSelectionFromArray(options)
   }
 
   /**

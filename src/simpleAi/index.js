@@ -19,7 +19,7 @@ export default class SimpleAi {
    * @param {Array} options - An array of options.
    * @returns {*} - A randomly selected value.
    */
-  makeSelection = (options) => {
+  makeSelectionFromArray = (options) => {
     validateOptions(options)
 
     if (options.length === 1) {

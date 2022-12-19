@@ -38,7 +38,7 @@ fakePerson.getDescription() // Hello, my name is Helge Svensson and I am 45 year
 
 Beside generating fake user data, a fake person can also be used as an AI player for simple games as demonstrated below.
 
-#### makeSelection(*options*)
+#### makeSelectionFromArray(*options*)
 
 > ***options***: An *array* with more than one item
 
@@ -52,12 +52,12 @@ const fakePerson = new FakePerson()
 // Example use case: Guess the number
 const correctNumber = 7
 const numbers = [...Array(10).keys()]
-const aiNumberGuess = fakePerson.makeSelection(numbers) // example output: 4
+const aiNumberGuess = fakePerson.makeSelectionFromArray(numbers) // example output: 4
 
 // Example use case: The hanging man
 const correctWord = 'jazz'
 const availableLetters = 'abcdefghijklmnopqrstuvxyz'.split('')
-const aiLetterGuess = fakePerson.makeSelection(availableLetters) // example output: j
+const aiLetterGuess = fakePerson.makeSelectionFromArray(availableLetters) // example output: j
 ```
 #### getDiceValue(*faces*, *numOfDice*)
 > ***faces***: A positive *number*
